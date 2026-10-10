@@ -3,12 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Luiz Gustavo - Desenvolvedor Backend especializado em Python, FastAPI, Flask e Node.js. Transformando ideias em soluções eficientes e escaláveis.">
-  <meta name="keywords" content="desenvolvedor backend, python, fastapi, flask, node.js, portfolio, programador">
-  <meta name="author" content="Luiz Gustavo">
-  <title>Luiz Gustavo | Desenvolvedor Backend</title>
+  <meta name="description" content="Luiz Gustavo Santos Bispo - Profissional de TI com foco em automação de processos, integrações via APIs REST/Webhooks e desenvolvimento com Python, TypeScript e React.">
+  <meta name="keywords" content="automação, n8n, power automate, glpi, python, typescript, react, apis rest, webhooks, portfolio">
+  <meta name="author" content="Luiz Gustavo Santos Bispo">
+  <meta property="og:title" content="Luiz Gustavo | Automação & Desenvolvimento">
+  <meta property="og:description" content="Automação de processos, integrações e dashboards em tempo real.">
+  <meta property="og:type" content="website">
+  <title>Luiz Gustavo | Automação & Desenvolvimento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
     :root {
       --bg-primary: #0a0a0f;
@@ -807,6 +812,7 @@
 
       #chessBoard {
         max-width: 100%;
+        height: auto;
       }
 
       .chess-score {
@@ -819,6 +825,25 @@
     html {
       scroll-behavior: smooth;
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .hero-content { opacity: 1; }
+    }
+
+    .projeto-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .projeto-link:hover { text-decoration: underline; }
 
     /* Focus visible para acessibilidade */
     *:focus {
@@ -876,21 +901,21 @@
   <main id="main-content">
     <section class="hero">
       <div class="hero-content">
-        <h1>Desenvolvedor <span class="gradient-text">Backend</span></h1>
-        <p>Transformando ideias em soluções eficientes e escaláveis com código limpo, performance otimizada e arquitetura robusta</p>
-        
+        <h1>Automação &amp; <span class="gradient-text">Desenvolvimento</span></h1>
+        <p>Profissional de TI com foco em eficiência operacional, automação de workflows e entrega de resultados mensuráveis.</p>
+
         <div class="hero-stats">
           <div class="stat-item">
-            <span class="stat-number">3+</span>
-            <span class="stat-label">Anos de Experiência</span>
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Processos Automatizados</span>
           </div>
           <div class="stat-item">
-            <span class="stat-number">15+</span>
-            <span class="stat-label">Projetos Concluídos</span>
+            <span class="stat-number">~30%</span>
+            <span class="stat-label">Ganho de Eficiência</span>
           </div>
           <div class="stat-item">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Dedicação</span>
+            <span class="stat-number">200</span>
+            <span class="stat-label">Tickets/mês Gerenciados</span>
           </div>
         </div>
 
@@ -906,17 +931,17 @@
       <p class="section-subtitle">Conhecendo um pouco da minha trajetória</p>
       <div class="sobre-content">
         <div class="profile-image">
-          <img src="https://avatars.githubusercontent.com/u/00000000?v=4" alt="Luiz Gustavo" loading="lazy">
+          <img src="https://github.com/eululuzito.png" alt="Luiz Gustavo Santos Bispo" loading="lazy">
         </div>
         <div class="sobre-texto">
           <h3>Olá! Eu sou o Luiz Gustavo 👋</h3>
-          <p>Desenvolvedor backend apaixonado por tecnologia, performance e boas práticas de código. Com experiência sólida em desenvolvimento de APIs REST, integração de sistemas e otimização de bancos de dados.</p>
-          <p>Atualmente curso Análise e Desenvolvimento de Sistemas no Instituto Federal, onde aprofundo meus conhecimentos em arquitetura de software, engenharia de dados e padrões de design.</p>
-          <p>Busco constantemente aprender novas tecnologias e aplicar as melhores práticas do mercado em projetos desafiadores. Acredito em código limpo, testes automatizados e documentação clara.</p>
+          <p>Profissional de TI com experiência em suporte técnico, automação de processos e desenvolvimento. Trabalho com troubleshooting, APIs REST, Webhooks, Python, JavaScript, React e bancos de dados.</p>
+          <p>Hoje atuo como Auxiliar Administrativo de TI, onde automatizei mais de 50 processos internos com n8n e Power Automate, criei um agente de IA que gerou mais de 100 tickets automatizados e integrei sistemas ao GLPI via APIs REST e Webhooks.</p>
+          <p>Curso Análise e Desenvolvimento de Sistemas e sou formado em Manutenção e Suporte em Informática. Moro em Sergipe, Brasil.</p>
           <div class="sobre-badges">
             <span class="badge">🎓 Estudante ADS</span>
-            <span class="badge">💼 Open to Work</span>
-            <span class="badge">🚀 Backend Developer</span>
+            <span class="badge">🤖 Automação</span>
+            <span class="badge">🔌 Integrações API</span>
           </div>
         </div>
       </div>
@@ -926,53 +951,69 @@
       <h2 class="section-title">Habilidades Técnicas</h2>
       <p class="section-subtitle">Tecnologias que domino e utilizo no dia a dia</p>
       <div class="skills-grid">
-        <div class="skill-card" tabindex="0">
+        <div class="skill-card">
+          <div class="icon">🤖</div>
+          <h4>n8n</h4>
+        </div>
+        <div class="skill-card">
+          <div class="icon">⚙️</div>
+          <h4>Power Automate</h4>
+        </div>
+        <div class="skill-card">
+          <div class="icon">🔌</div>
+          <h4>APIs REST</h4>
+        </div>
+        <div class="skill-card">
+          <div class="icon">🪝</div>
+          <h4>Webhooks</h4>
+        </div>
+        <div class="skill-card">
           <div class="icon">🐍</div>
           <h4>Python</h4>
         </div>
-        <div class="skill-card" tabindex="0">
-          <div class="icon">⚡</div>
-          <h4>FastAPI</h4>
+        <div class="skill-card">
+          <div class="icon">🟨</div>
+          <h4>JavaScript</h4>
         </div>
-        <div class="skill-card" tabindex="0">
-          <div class="icon">🌶️</div>
-          <h4>Flask</h4>
+        <div class="skill-card">
+          <div class="icon">🔷</div>
+          <h4>TypeScript</h4>
         </div>
-        <div class="skill-card" tabindex="0">
-          <div class="icon">🟢</div>
-          <h4>Node.js</h4>
+        <div class="skill-card">
+          <div class="icon">⚛️</div>
+          <h4>React</h4>
         </div>
-        <div class="skill-card" tabindex="0">
-          <div class="icon">🐘</div>
-          <h4>PostgreSQL</h4>
+        <div class="skill-card">
+          <div class="icon">🎨</div>
+          <h4>HTML & CSS</h4>
         </div>
-        <div class="skill-card" tabindex="0">
-          <div class="icon">💾</div>
-          <h4>SQLite</h4>
+        <div class="skill-card">
+          <div class="icon">🗄️</div>
+          <h4>SQL (básico)</h4>
         </div>
-        <div class="skill-card" tabindex="0">
+        <div class="skill-card">
           <div class="icon">🐙</div>
           <h4>Git & GitHub</h4>
         </div>
-        <div class="skill-card" tabindex="0">
-          <div class="icon">🐳</div>
-          <h4>Docker</h4>
+        <div class="skill-card">
+          <div class="icon">🟣</div>
+          <h4>Power Platform</h4>
         </div>
-        <div class="skill-card" tabindex="0">
-          <div class="icon">🔄</div>
-          <h4>REST API</h4>
+        <div class="skill-card">
+          <div class="icon">🎫</div>
+          <h4>GLPI</h4>
         </div>
-        <div class="skill-card" tabindex="0">
-          <div class="icon">🧪</div>
-          <h4>Pytest</h4>
+        <div class="skill-card">
+          <div class="icon">🛠️</div>
+          <h4>Troubleshooting</h4>
         </div>
-        <div class="skill-card" tabindex="0">
-          <div class="icon">📊</div>
-          <h4>Data Analysis</h4>
+        <div class="skill-card">
+          <div class="icon">🌐</div>
+          <h4>Redes</h4>
         </div>
-        <div class="skill-card" tabindex="0">
-          <div class="icon">☁️</div>
-          <h4>Cloud</h4>
+        <div class="skill-card">
+          <div class="icon">📋</div>
+          <h4>Scrum & Kanban</h4>
         </div>
       </div>
     </section>
@@ -981,37 +1022,38 @@
       <h2 class="section-title">Projetos em Destaque</h2>
       <p class="section-subtitle">Alguns dos trabalhos que mais me orgulho</p>
       <div class="projetos-grid">
-        <div class="projeto-card" tabindex="0">
-          <div class="icon">🎫</div>
-          <h4>API de Gerenciamento de Chamados</h4>
-          <p>Sistema completo de integração entre WhatsApp e GLPI para abertura e acompanhamento de tickets em tempo real com notificações automáticas.</p>
+        <div class="projeto-card">
+          <div class="icon">📈</div>
+          <h4>Plataforma GLPI</h4>
+          <p>Dashboard de monitoramento em tempo real que melhora a visibilidade das operações de suporte.</p>
           <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">WhatsApp API</span>
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">WebSocket</span>
+            <span class="tag">APIs REST</span>
           </div>
         </div>
-        <div class="projeto-card" tabindex="0">
+        <div class="projeto-card">
+          <div class="icon">💬</div>
+          <h4>Agente de IA no WhatsApp</h4>
+          <p>Automação com inteligência artificial para agilizar a criação de tickets e a interação com usuários, reduzindo a carga manual do suporte. Mais de 100 tickets gerados automaticamente.</p>
+          <div class="tags">
+            <span class="tag">IA</span>
+            <span class="tag">n8n</span>
+            <span class="tag">Webhooks</span>
+            <span class="tag">GLPI</span>
+          </div>
+        </div>
+        <div class="projeto-card">
           <div class="icon">📊</div>
-          <h4>Simulação Monte Carlo</h4>
-          <p>Software de simulação estatística utilizando o modelo XY Vetorial Blume-Emery-Griffiths para análise científica avançada e visualização de dados complexos.</p>
+          <h4>Dashboard Power Platform – SharePoint</h4>
+          <p>Painel criado do zero para monitorar em tempo real o uso de armazenamento do SharePoint via APIs Microsoft 365, substituindo verificações manuais e permitindo decisões preventivas.</p>
           <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">NumPy</span>
-            <span class="tag">Matplotlib</span>
+            <span class="tag">Power Platform</span>
+            <span class="tag">SharePoint</span>
+            <span class="tag">Microsoft 365 API</span>
           </div>
-        </div>
-        <div class="projeto-card" tabindex="0">
-          <div class="icon">🔐</div>
-          <h4>Sistema de Autenticação</h4>
-          <p>API de autenticação segura com JWT, refresh tokens, controle de permissões e auditoria de acesso, implementando as melhores práticas de segurança.</p>
-          <div class="tags">
-            <span class="tag">Node.js</span>
-            <span class="tag">JWT</span>
-            <span class="tag">PostgreSQL</span>
-          </div>
-        </div>
-      </div>
+        </div>      </div>
     </section>
 
     <section id="chess-section">
@@ -1046,19 +1088,19 @@
     <section id="contato">
       <div class="contato">
         <h2>Vamos Trabalhar Juntos?</h2>
-        <p>Estou sempre aberto a novas oportunidades e projetos desafiadores.</p>
+        <p>Aberto a novas oportunidades em automação, integrações e desenvolvimento.</p>
         <div class="social-links">
-          <a href="https://github.com/luizgustavo" class="social-btn" aria-label="GitHub" target="_blank" rel="noopener">🐙</a>
-          <a href="https://linkedin.com/in/luizgustavo" class="social-btn" aria-label="LinkedIn" target="_blank" rel="noopener">💼</a>
-          <a href="mailto:luizgustavo@example.com" class="social-btn" aria-label="E-mail">📧</a>
-          <a href="https://wa.me/5511999999999" class="social-btn" aria-label="WhatsApp" target="_blank" rel="noopener">📱</a>
+          <a href="https://github.com/eululuzito" class="social-btn" aria-label="GitHub" target="_blank" rel="noopener">🐙</a>
+          <a href="https://linkedin.com/in/tecluizgustavo" class="social-btn" aria-label="LinkedIn" target="_blank" rel="noopener">💼</a>
+          <a href="mailto:contatoluizgustavo05@gmail.com" class="social-btn" aria-label="E-mail">📧</a>
+          <a href="https://wa.me/5579999992866" class="social-btn" aria-label="WhatsApp" target="_blank" rel="noopener">📱</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2023 Luiz Gustavo. Todos os direitos reservados.</p>
+    <p>&copy; 2026 Luiz Gustavo Santos Bispo. Todos os direitos reservados.</p>
   </footer>
 
   <script>
@@ -1110,6 +1152,8 @@
     let gameHistory = [];
     let playerScore = 0;
     let computerScore = 0;
+    let gameOver = false;
+    let computerTimer = null;
 
     // Peças de xadrez com valores
     const pieces = {
@@ -1138,20 +1182,20 @@
             }
         }
 
-        // Posicionar peças brancas
-        board[0][0] = 'wr'; board[0][1] = 'wn'; board[0][2] = 'wb'; board[0][3] = 'wq';
-        board[0][4] = 'wk'; board[0][5] = 'wb'; board[0][6] = 'wn'; board[0][7] = 'wr';
+        // Brancas embaixo (linhas 6-7), pretas em cima (linhas 0-1)
+        board[7][0] = 'wr'; board[7][1] = 'wn'; board[7][2] = 'wb'; board[7][3] = 'wq';
+        board[7][4] = 'wk'; board[7][5] = 'wb'; board[7][6] = 'wn'; board[7][7] = 'wr';
         for (let i = 0; i < boardSize; i++) {
-            board[1][i] = 'wp';
+            board[6][i] = 'wp';
         }
 
-        // Posicionar peças pretas
-        board[7][0] = 'br'; board[7][1] = 'bn'; board[7][2] = 'bb'; board[7][3] = 'bq';
-        board[7][4] = 'bk'; board[7][5] = 'bb'; board[7][6] = 'bn'; board[7][7] = 'br';
+        board[0][0] = 'br'; board[0][1] = 'bn'; board[0][2] = 'bb'; board[0][3] = 'bq';
+        board[0][4] = 'bk'; board[0][5] = 'bb'; board[0][6] = 'bn'; board[0][7] = 'br';
         for (let i = 0; i < boardSize; i++) {
-            board[6][i] = 'bp';
+            board[1][i] = 'bp';
         }
 
+        gameOver = false;
         currentPlayer = 'white';
         selectedPiece = null;
         validMoves = [];
@@ -1389,7 +1433,10 @@
             board: JSON.parse(JSON.stringify(board)),
             from: {row: fromRow, col: fromCol},
             to: {row: toRow, col: toCol},
-            captured: board[toRow][toCol]
+            captured: board[toRow][toCol],
+            player: currentPlayer,
+            playerScore,
+            computerScore
         });
 
         // Mover peça
@@ -1407,6 +1454,18 @@
             updateScores();
         }
 
+        // Promoção de peão
+        if (piece === 'wp' && toRow === 0) board[toRow][toCol] = 'wq';
+        if (piece === 'bp' && toRow === 7) board[toRow][toCol] = 'bq';
+
+        // Fim de jogo: rei capturado
+        const capturedNow = gameHistory[gameHistory.length - 1].captured;
+        if (capturedNow === 'wk' || capturedNow === 'bk') {
+            gameOver = true;
+            statusMessage.textContent = capturedNow === 'bk' ? 'Fim de jogo: você venceu! 🎉' : 'Fim de jogo: o computador venceu.';
+            return;
+        }
+
         // Alternar jogador
         currentPlayer = currentPlayer === 'white' ? 'black' : 'white';
         updateStatus();
@@ -1414,6 +1473,7 @@
 
     // Atualizar status do jogo
     function updateStatus() {
+        if (gameOver) return;
         statusMessage.textContent = `É a vez das ${currentPlayer === 'white' ? 'brancas' : 'pretas'}`;
     }
 
@@ -1425,24 +1485,23 @@
 
     // Desfazer último movimento
     function undoMove() {
+        clearTimeout(computerTimer);
         if (gameHistory.length > 0) {
-            const lastMove = gameHistory.pop();
-            board = lastMove.board;
-            
-            // Reverter pontuação se uma peça foi capturada
-            if (lastMove.captured !== 'empty') {
-                if (currentPlayer === 'black') { // O movimento foi feito pelas brancas
-                    playerScore -= pieces[lastMove.captured].value;
-                } else { // O movimento foi feito pelas pretas
-                    computerScore -= pieces[lastMove.captured].value;
-                }
-                updateScores();
-            }
-            
-            // Alternar jogador de volta
-            currentPlayer = currentPlayer === 'white' ? 'black' : 'white';
+            // Volta até o último lance das brancas (desfaz o par jogador + computador)
+            let state;
+            do {
+                state = gameHistory.pop();
+            } while (state.player !== 'white' && gameHistory.length > 0);
+
+            board = state.board;
+            playerScore = state.playerScore;
+            computerScore = state.computerScore;
+            updateScores();
+
+            gameOver = false;
+            currentPlayer = 'white';
             updateStatus();
-            
+
             selectedPiece = null;
             validMoves = [];
             drawBoard();
@@ -1451,7 +1510,7 @@
 
     // Fornecer uma dica
     function giveHint() {
-        if (currentPlayer === 'white') { // Apenas para o jogador (brancas)
+        if (currentPlayer === 'white' && !gameOver) { // Apenas para o jogador (brancas)
             // Encontrar uma peça com movimentos válidos
             for (let i = 0; i < boardSize; i++) {
                 for (let j = 0; j < boardSize; j++) {
@@ -1491,10 +1550,17 @@
             }
         }
 
-        // Escolher um movimento aleatório
-        if (allMoves.length > 0) {
-            const randomMove = allMoves[Math.floor(Math.random() * allMoves.length)];
-            movePiece(randomMove.from.row, randomMove.from.col, randomMove.to.row, randomMove.to.col);
+        // Prefere a captura de maior valor (rei vale mais); senão, lance aleatório
+        const captureValue = m => {
+            const target = board[m.to.row][m.to.col];
+            return target === 'empty' ? 0 : (target === 'wk' ? 100 : pieces[target].value);
+        };
+        const best = Math.max(...allMoves.map(captureValue));
+        const pool = best > 0 ? allMoves.filter(m => captureValue(m) === best) : allMoves;
+
+        if (pool.length > 0) {
+            const move = pool[Math.floor(Math.random() * pool.length)];
+            movePiece(move.from.row, move.from.col, move.to.row, move.to.col);
             drawBoard();
         }
     }
@@ -1502,14 +1568,14 @@
     // Manipular clique no tabuleiro
     canvas.addEventListener('click', (e) => {
         const rect = canvas.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
+        const x = (e.clientX - rect.left) * (canvas.width / rect.width);
+        const y = (e.clientY - rect.top) * (canvas.height / rect.height);
+
         const col = Math.floor(x / squareSize);
         const row = Math.floor(y / squareSize);
 
         // Verificar se é a vez do jogador
-        if (currentPlayer !== 'white') return;
+        if (currentPlayer !== 'white' || gameOver) return;
 
         // Se uma peça já está selecionada
         if (selectedPiece) {
@@ -1523,7 +1589,7 @@
                 drawBoard();
                 
                 // Simular movimento do computador após um curto delay
-                setTimeout(computerMove, 500);
+                if (!gameOver) computerTimer = setTimeout(computerMove, 500);
             } else {
                 // Selecionar outra peça ou desselecionar
                 if (board[row][col] !== 'empty' && board[row][col][0] === 'w') {
@@ -1547,6 +1613,7 @@
 
     // Event listeners para os botões
     newGameBtn.addEventListener('click', () => {
+        clearTimeout(computerTimer);
         playerScore = 0;
         computerScore = 0;
         updateScores();
