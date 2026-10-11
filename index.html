@@ -119,6 +119,7 @@
     .nav-links a { display: block; padding: 7px 14px; border-radius: 999px; text-decoration: none; color: var(--muted); font-size: 0.92rem; font-weight: 500; transition: color 0.2s, background 0.2s; }
     .nav-links a:hover { color: var(--text); background: var(--accent-wash); }
     .nav-links a.active { color: var(--text); background: var(--accent-wash); box-shadow: inset 0 0 0 1px var(--accent-line); }
+    .nav-links .menu-cv { display: none; }
     .nav-tools { display: flex; align-items: center; gap: 8px; }
     .tool {
       height: 36px; min-width: 36px; padding: 0 10px; border-radius: 10px; border: 1px solid var(--line-2);
@@ -127,6 +128,10 @@
     }
     .tool:hover { color: var(--text); border-color: var(--accent-line); }
     .tool svg { width: 16px; height: 16px; }
+    .menu-btn { display: none; }
+    .menu-btn .m-close { display: none; }
+    .menu-btn[aria-expanded="true"] .m-open { display: none; }
+    .menu-btn[aria-expanded="true"] .m-close { display: inline; }
 
     /* ================= Botões ================= */
     .btn {
@@ -349,7 +354,15 @@
     @media (max-width: 640px) {
       .wrap { width: calc(100% - 32px); }
       .nav-inner { gap: 12px; }
-      .nav-links, .nav-cv { display: none; }
+      .nav-cv { display: none; }
+      .menu-btn { display: inline-grid; }
+      .nav-links {
+        display: none; position: absolute; top: 64px; left: 0; right: 0; margin: 0; padding: 12px 16px 18px;
+        flex-direction: column; gap: 4px; background: var(--bg); border-bottom: 1px solid var(--line); box-shadow: var(--shadow);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 14px; font-size: 1rem; border-radius: 12px; }
+      .nav-links .menu-cv { display: block; }
       .nav-tools { margin-left: auto; }
       .hero h1 { font-size: 2.35rem; }
       .portrait { margin-left: 18px; }
@@ -385,12 +398,16 @@
         <li><a href="#projetos" data-i18n="nav_projects">Projetos</a></li>
         <li><a href="#experiencia" data-i18n="nav_exp">Experiência</a></li>
         <li><a href="#contato" data-i18n="nav_contact">Contato</a></li>
+        <li class="menu-cv"><a href="curriculo-luiz-gustavo-bispo.pdf" download data-i18n="btn_cv">Baixar currículo</a></li>
       </ul>
       <div class="nav-tools">
         <a class="btn btn-sm nav-cv" href="curriculo-luiz-gustavo-bispo.pdf" download data-i18n="nav_cv">Currículo</a>
         <button class="tool" id="lang-btn" type="button" aria-label="Switch language / Trocar idioma">EN</button>
         <button class="tool" id="theme-btn" type="button" aria-label="Alternar tema claro/escuro" data-i18n-aria="theme_aria">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+        </button>
+        <button class="tool menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu" data-i18n-aria="menu_aria">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="m-open" d="M4 7h16M4 12h16M4 17h16"/><path class="m-close" d="M6 6l12 12M18 6L6 18"/></svg>
         </button>
       </div>
     </div>
@@ -716,7 +733,7 @@
     // ---------- Traduções (PT / EN) ----------
     const T = {
       pt: {
-        skip: 'Pular para o conteúdo', theme_aria: 'Alternar tema claro/escuro',
+        skip: 'Pular para o conteúdo', theme_aria: 'Alternar tema claro/escuro', menu_aria: 'Abrir menu',
         nav_projects: 'Projetos', nav_exp: 'Experiência', nav_contact: 'Contato', nav_cv: 'Currículo',
         hero_pill: 'Automação · Integrações · IA',
         role_line: 'Automação, integrações e suporte de TI',
@@ -793,7 +810,7 @@
         lang_switch: 'EN'
       },
       en: {
-        skip: 'Skip to content', theme_aria: 'Toggle light/dark theme',
+        skip: 'Skip to content', theme_aria: 'Toggle light/dark theme', menu_aria: 'Open menu',
         nav_projects: 'Projects', nav_exp: 'Experience', nav_contact: 'Contact', nav_cv: 'Résumé',
         hero_pill: 'Automation · Integrations · AI',
         role_line: 'Automation, integrations and IT support',
@@ -912,6 +929,15 @@
       try { localStorage.setItem('lang', lang); } catch (e) {}
     }
     document.getElementById('lang-btn').addEventListener('click', () => applyLang(lang === 'pt' ? 'en' : 'pt'));
+
+    // ---------- Menu hambúrguer (celular) ----------
+    const menuBtn = document.getElementById('menu-btn');
+    const menuList = document.getElementById('nav-links');
+    const setMenu = open => { menuBtn.setAttribute('aria-expanded', String(open)); menuList.classList.toggle('open', open); };
+    menuBtn.addEventListener('click', () => setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'));
+    menuList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+    document.addEventListener('click', e => { if (!e.target.closest('.nav')) setMenu(false); });
 
     // ---------- Tema ----------
     document.getElementById('theme-btn').addEventListener('click', () => {
